@@ -1,13 +1,14 @@
-﻿using Tyuiu.KolganenkoRV.Sprint4.Task1.V4.Lib;
+﻿using Tyuiu.KolganenkoRV.Sprint4.Task2.V19.Lib;
 
+Random rnd = new Random();
 DataService ds = new DataService();
 Console.Title = "Спринт #4 | Выполнила : Колганенко Р. В. | ИБКСб-25-1";
 //Длина строки 75 символов
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("* Спринт #4                                                               *");
 Console.WriteLine("* Тема: Базовые навыки работы в C#                                        *");
-Console.WriteLine("* Задание #1                                                              *");
-Console.WriteLine("* Вариант #4                                                              *");
+Console.WriteLine("* Задание #2                                                              *");
+Console.WriteLine("* Вариант #19                                                             *");
 Console.WriteLine("* Выполнил: Колганенко Ринат Витальевич | ИБКСб-25-1                      *");
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("* УСЛОВИЕ:                                                                *");
@@ -15,18 +16,17 @@ Console.WriteLine("* Написать программу, которая выв�
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
 Console.WriteLine("***************************************************************************");
-int len;
+
 Console.WriteLine("Введите кол-во элементов массива: ");
-len = Convert.ToInt32(Console.ReadLine());
-int p = 1;
+int len = Convert.ToInt32(Console.ReadLine());
 int[] numsArray = new int[len];
+
 for (int i = 0; i < len; i++)
 {
-    Console.WriteLine("Введите значение " + i + " элемента массива: ");
-    numsArray[i] = Convert.ToInt32(Console.ReadLine());
+    numsArray[i] = rnd.Next(4, 9);
 }
 
-Console.WriteLine();
+
 Console.WriteLine("массив: ");
 
 for (int i = 0; i < len; i++)
@@ -36,13 +36,11 @@ for (int i = 0; i < len; i++)
 
 Console.WriteLine();
 
-Console.WriteLine();
-
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
 Console.WriteLine("***************************************************************************");
 int res = ds.Calculate(numsArray);
-Console.WriteLine("Произведение нечетных элементов массива: " + res);
+Console.WriteLine("Cумма нечетных элементов: " + res);
 
 Console.WriteLine();
 Console.ReadKey();
